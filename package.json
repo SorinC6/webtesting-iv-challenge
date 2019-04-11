@@ -5,7 +5,12 @@
   "main": "server.js",
   "scripts": {
     "server": "nodemon",
-    "test": "cross-env DB_ENV=testing jest --watch --verbose"
+    "test": "cross-env DB_ENV=testing jest --watch --verbose",
+    "tableChar": "knex migrate:make usersTable",
+    "migrate": "knex migrate:latest",
+    "rollback": "knex migrate:rollback",
+    "seedUsers": "knex seed:make 01-char",
+    "runseedUsers": "knex seed:run 01-char"
   },
   "jest": {
     "testEnvironment": "node"
