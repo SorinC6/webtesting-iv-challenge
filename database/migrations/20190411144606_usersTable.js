@@ -6,7 +6,7 @@ exports.up = function(knex, Promise) {
       .string("name", 128)
       .notNullable()
       .unique();
-    table.string("special power", 128).notNullable();
+    table.string("special_power", 128).notNullable();
     table.string("world", 128).notNullable();
   });
 };
