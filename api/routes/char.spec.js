@@ -15,8 +15,13 @@ describe("chars model", () => {
         special_power: "ddd",
         world: "Tatooene"
       });
+      const secondChar = await db("chars").insert({
+        name: "Vader",
+        special_power: "force",
+        world: "unknow"
+      });
       const allTheChars = await db("chars");
-      expect(allTheChars).toHaveLength(1);
+      expect(allTheChars).toHaveLength(2);
     });
   });
 });
