@@ -9,4 +9,16 @@ describe("server", () => {
       expect(process.env.DB_ENV).toBe("testing");
     });
   });
+
+  it("it should returs the right response body", () => {
+    const expectedBody = {
+      name: "TestName",
+      special_power: "testPower",
+      world: "testWorld"
+    };
+    return request(server)
+      .get("/api/chars")
+      .expect(expectedBody)
+      .expect(200);
+  });
 });
