@@ -3,7 +3,7 @@ const helmet = require("helmet");
 // const cors = require("cors");
 
 //routes import - nothing for now
-//const charRoutes = require("../routes/user-routes");
+const charRoutes = require("../api/routes/char-routes");
 
 const server = express();
 
@@ -12,6 +12,6 @@ server.use(helmet());
 server.use(express.json());
 
 //server.use(routes)
-//server.use(charRoutes);
+server.use("/api/chars", charRoutes);
 
 module.exports = server;
